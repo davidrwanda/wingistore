@@ -5,6 +5,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import AddNewProduct from "./AddNewProduct";
 import { useDispatch } from "react-redux";
 import { showAdd, showEdit } from "../../features/tabSlice";
+import SearchIcon from "@mui/icons-material/Search";
 const Products = () => {
   const dispatch = useDispatch();
   const [isShow, setIsShow] = useState({ show: false, data: null });
@@ -13,7 +14,14 @@ const Products = () => {
       <h1>Products</h1>
       <div className="add_action">
         <button onClick={() => dispatch(showAdd())}>Add</button>
+        <div className="store_products_filter">
+          <div>
+            <SearchIcon />
+            <input type="text" placeholder="Search by name" />
+          </div>
+        </div>
       </div>
+
       <div className="product_table">
         <table id="products">
           <tr>

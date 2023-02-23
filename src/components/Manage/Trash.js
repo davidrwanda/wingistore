@@ -4,13 +4,19 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import AddNewProduct from "./AddNewProduct";
 import { useDispatch } from "react-redux";
 import RestoreIcon from "@mui/icons-material/Restore";
+import SearchIcon from "@mui/icons-material/Search";
 
 const Trash = () => {
   const dispatch = useDispatch();
   const [isShow, setIsShow] = useState({ show: false, data: null });
   return (
     <div className="manage_product_container">
-      <h1>Trash</h1>
+      <div className="store_products_filter">
+        <div>
+          <SearchIcon />
+          <input type="text" placeholder="Search deleted product" />
+        </div>
+      </div>
       <div className="product_table">
         <table id="products">
           <tr>
