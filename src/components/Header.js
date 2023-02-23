@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div className="header_container">
       <div className="logo">
-        <h2 onClick={() => navigate("/")}>WengiStore</h2>
+        <h2 onClick={() => navigate("/")}>WingiStore</h2>
       </div>
       <div className="avatar">
         <Avatar onClick={() => navigate("/manage")}></Avatar>
