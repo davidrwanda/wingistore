@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import ProductImg from "../assets/laptop.jpg";
 import "../styles/Product.scss";
 const Product = () => {
+  const navigate = useNavigate();
   return (
     <div className="product_container">
       <div className="image">
@@ -16,7 +18,7 @@ const Product = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
           nulla.
         </p>
-        <button>More</button>
+        <button onClick={() => navigate("/product/1")}>More</button>
       </div>
     </div>
   );
