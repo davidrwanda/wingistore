@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Categories from "../components/Manage/Categories";
 import Products from "../components/Manage/Products";
@@ -32,6 +32,7 @@ const Manage = () => {
       is_trash_Active: true,
     });
   };
+
   return (
     <div className="manage_container">
       <Header />
