@@ -1,7 +1,7 @@
 import React from "react";
 import ProductImg from "../assets/laptop.jpg";
 import "../styles/Product.scss";
-const Product = () => {
+const Product = ({ product }) => {
   return (
     <div className="product_container">
       <div className="image">
@@ -9,13 +9,10 @@ const Product = () => {
       </div>
       <div className="other_info">
         <h1>
-          Shoes <span>Category</span>
+          {product.name} <span>{product.category}</span>
         </h1>
-        <h1>$300</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-          nulla.
-        </p>
+        <h1>{product.price}</h1>
+        <p>{product.description}</p>
         <button>More</button>
       </div>
     </div>

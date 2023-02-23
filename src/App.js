@@ -6,6 +6,9 @@ import ProductDetails from "./Pages/ProductDetails";
 import Manage from "./Pages/Manage";
 
 function App() {
+  if (!localStorage.getItem("products")) {
+    localStorage.setItem("products", JSON.stringify([]));
+  }
   return (
     <div className="App">
       <BrowserRouter>

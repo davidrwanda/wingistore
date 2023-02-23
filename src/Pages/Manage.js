@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Categories from "../components/Manage/Categories";
 import Products from "../components/Manage/Products";
 import Trash from "../components/Manage/Trash";
 import "../styles/Manage.scss";
+import { exportCSV } from "../helpers/exportCSV";
 
 const Manage = () => {
   const [controlActive, setControlActive] = useState({
@@ -32,6 +33,11 @@ const Manage = () => {
       is_trash_Active: true,
     });
   };
+
+  const handleExportCSV = () => {
+    exportCSV();
+  };
+
   return (
     <div className="manage_container">
       <Header />
