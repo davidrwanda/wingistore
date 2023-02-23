@@ -31,7 +31,10 @@ Users can delete an existing product by clicking the "Delete" icon and confirmin
 
 ### Import CSV
 Users can import a CSV file containing product data by clicking the "Import" button and selecting a file.
+#### CSV Templete
 
+Please refer to CSV templete in the root of Application
+[a relative link](https://github.com/davidrwanda/wingistore/blob/main/testProdcut.csv)
 ### Export CSV
 Users can export the list of products to a CSV file by clicking the "Export" button.
 
