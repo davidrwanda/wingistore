@@ -107,6 +107,7 @@ Possible future work for this POC includes:
 4. Adding filtering and sorting to make it easier to find specific products.
 ## Demo link
 For more information and examples of how to use the app, you can check out the following YouTube link.
+[Demo link](https://youtu.be/ob0U1QvyWWQ)
 
 ## Learn More
 
