@@ -45,27 +45,35 @@ const Products = () => {
   return (
     <div className="manage_product_container">
       <h1>Products</h1>
-      <input
-        type="text"
-        placeholder="Search by name"
-        value={searchQuery}
-        onChange={(e) => {
-          setSearchQuery(e.target.value);
-          handleSearch();
-        }}
-      />
+
       <div className="add_action">
-        <button onClick={() => dispatch(showAdd())}>Add</button>
-        <div className="store_products_filter">
-          <div>
-            <SearchIcon />
-            <input type="text" placeholder="Search by name" />
+        <div>
+          <button onClick={() => dispatch(showAdd())}>Add</button>
+          <button onClick={handleExportCSV}>Export</button>
+          <button
+            onClick={() => document.getElementById("import-input").click()}
+          >
+            Import
+          </button>
+        </div>
+
+        <div>
+          <div className="store_products_filter">
+            <div>
+              <SearchIcon />
+              <input
+                type="text"
+                placeholder="Search by name"
+                value={searchQuery}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  handleSearch();
+                }}
+              />
+            </div>
           </div>
         </div>
-        <button onClick={handleExportCSV}>Export</button>
-        <button onClick={() => document.getElementById("import-input").click()}>
-          Import
-        </button>
+
         <input
           id="import-input"
           type="file"
