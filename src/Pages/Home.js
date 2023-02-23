@@ -29,7 +29,9 @@ const Home = () => {
     if (category === "all") {
       filtered = controller.getProducts();
     } else {
-      filtered = controller.filterByCategory(category);
+      filtered = controller
+        .filterByCategory(category)
+        .filter((p) => p.status === 1);
     }
 
     setFilteredProducts(filtered);

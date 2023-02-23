@@ -172,6 +172,7 @@
              width: 100%;
              outline: none;
          }
+
          select{
             padding: 10px;
             border: none;
@@ -181,4 +182,11 @@
         }
         
      }
+     textarea{
+        padding: 10px;
+        border: none;
+        height: 150px;
+        width: 100%;
+        outline: none;
+    }
 }

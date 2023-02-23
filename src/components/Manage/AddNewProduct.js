@@ -81,13 +81,15 @@ const AddNewProduct = () => {
       <form onSubmit={handleFormSubmit}>
         <label>Name</label>
         <input
+          required
           type="text"
           value={pname}
           onChange={(e) => setPname(e.target.value)}
           placeholder="Name"
         />
         <label>Description</label>
-        <input
+        <textarea
+          required
           type="text"
           value={pdesc}
           onChange={(e) => setPdesc(e.target.value)}
@@ -95,6 +97,7 @@ const AddNewProduct = () => {
         />
         <label>Price</label>
         <input
+          required
           type="text"
           value={pprice}
           onChange={(e) => setPprice(e.target.value)}
@@ -102,12 +105,16 @@ const AddNewProduct = () => {
         />
         <label>Category</label>
         <select
+          required
           value={pcategory}
           onChange={(e) => setPcategory(e.target.value)}
         >
+          <option selected disabled value="">
+            select category
+          </option>
           <option value="Electronics">Electronics</option>
           <option value="Fashion">Fashion</option>
-          <option value="sports">Sports</option>
+          <option value="Sports">Sports</option>
         </select>
         <label>Image</label>
         <input type="file" onChange={handleImageChange} placeholder="" />

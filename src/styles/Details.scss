@@ -2,11 +2,35 @@
     .detail{
         color: whitesmoke;
         margin-top: 90px;
-        width: 60vw;
+        width: auto;
         margin: 0 auto;
         margin-top: 100px;
         padding: 10px;
-        background: #383838;
+        padding-left: 50px;
+        max-width:  700px;
+        .other_info
+        {
+            h1{
+                display: flex;
+                font-size: 40px;
+                margin: 10px 0px;
+                align-items: center;
+            }
+            span{
+                font-size: 20px;
+                margin-top: 5px;
+                color: rgb(243, 8, 8);
+            }
+            h5{
+                font-weight: bold;
+                color: rgb(248, 212, 8);
+                margin: 30px 0px;
+            }
+            p{
+                max-width: 300px;
+                text-align: justify;
+            }
+        }
         .back{
             width: 150px;
             padding: 8px;
@@ -15,7 +39,8 @@
         }
         .image{
             img{
-                width: 700px;
+                width: auto;
+                max-height: 300px;
                 object-fit: cover
             };
         }

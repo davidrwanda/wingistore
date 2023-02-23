@@ -22,9 +22,8 @@ const ProductDetails = () => {
           <img src={product.image} alt="" />
         </div>
         <div className="other_info">
-          <h1>
-            {product.name} <span>{product.category}</span>
-          </h1>
+          <h1>{product.name}</h1>
+          <span>{product.category}</span>
           <h5>${product.price}</h5>
           <p>{product.description}</p>
         </div>
