@@ -34,7 +34,7 @@ Users can import a CSV file containing product data by clicking the "Import" but
 #### CSV Templete
 
 Please refer to CSV templete in the root of Application
-[click me to download](https://github.com/davidrwanda/wingistore/blob/main/testProdcut.csv)
+[epub](https://github.com/davidrwanda/wingistore/blob/main/testProdcut.csv)
 ### Export CSV
 Users can export the list of products to a CSV file by clicking the "Export" button.
 
