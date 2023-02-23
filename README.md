@@ -58,6 +58,9 @@ The application uses the repository pattern to abstract away the details of how 
 ### To run this application, follow these steps:
 Clone this repository.
 Navigate to the project directory.
+
+## Note
+This project was made using Node 1.4 if you use newer version some library might not work correctly 
 ### `Run npm install` 
 
 Run npm start to start the development server.
