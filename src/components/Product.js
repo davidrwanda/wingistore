@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import ProductImg from "../assets/laptop.jpg";
 import "../styles/Product.scss";
 const Product = ({ product }) => {
   const navigate = useNavigate();

@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "../components/Header";
-import ProductImg from "../assets/laptop.jpg";
 import "../styles/Details.scss";
 import { ProductController } from "../controllers/ProductController";
 
