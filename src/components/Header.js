@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Header.scss";
-import { Avatar } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import SettingsIcon from "@mui/icons-material/Settings";
 const Header = () => {
   const navigate = useNavigate();
   return (
@@ -9,8 +9,8 @@ const Header = () => {
       <div className="logo">
         <h2 onClick={() => navigate("/")}>WingiStore</h2>
       </div>
-      <div className="avatar">
-        <Avatar onClick={() => navigate("/manage")}></Avatar>
+      <div className="avatar" onClick={() => navigate("/manage")}>
+        <SettingsIcon></SettingsIcon>
       </div>
     </div>
   );

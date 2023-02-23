@@ -13,4 +13,14 @@
     div{
         cursor: pointer;
     }
+    .avatar{
+        background: white;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: whitesmoke;
+        color: black;
+        display: grid;
+        place-content: center;
+    }
 }
