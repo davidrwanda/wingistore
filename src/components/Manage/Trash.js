@@ -1,19 +1,16 @@
 import React, { useState } from "react";
 import { Avatar } from "@mui/material";
-import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddNewProduct from "./AddNewProduct";
 import { useDispatch } from "react-redux";
-import { showAdd, showEdit } from "../../features/tabSlice";
-const Products = () => {
+import RestoreIcon from "@mui/icons-material/Restore";
+
+const Trash = () => {
   const dispatch = useDispatch();
   const [isShow, setIsShow] = useState({ show: false, data: null });
   return (
     <div className="manage_product_container">
-      <h1>Products</h1>
-      <div className="add_action">
-        <button onClick={() => dispatch(showAdd())}>Add</button>
-      </div>
+      <h1>Trash</h1>
       <div className="product_table">
         <table id="products">
           <tr>
@@ -38,22 +35,10 @@ const Products = () => {
                 <td>$200</td>
                 <td>
                   <div className="actionbtn">
-                    <EditIcon
+                    <RestoreIcon
+                      className="restore btn"
                       onClick={() =>
-                        dispatch(
-                          showEdit({
-                            id: 1,
-                            name: "shoes",
-                            category: "Fashion",
-                          })
-                        )
-                      }
-                      className="edit btn"
-                    />
-                    <DeleteIcon
-                      className="delete btn"
-                      onClick={() =>
-                        window.confirm("Are sure you want to delete")
+                        window.confirm("Are sure you want to restore")
                       }
                     />
                   </div>
@@ -68,4 +53,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Trash;

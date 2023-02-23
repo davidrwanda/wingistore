@@ -33,13 +33,50 @@
                 border-collapse: collapse;
                 width: 100%;
               }
-              
+              td:last-of-type{
+                text-align: center;
+                
+              }
+              #products td{
+                .actionbtn{
+                    display: flex;
+                    gap: 8px;
+                    justify-content: center;
+                    .btn{
+                        cursor: pointer;
+                        height: 25px;
+                        width: 25px;
+                        border-radius: 50%;
+                        padding: 4px;
+                        display: flex;
+                        justify-content: center;
+                        background-color: rgb(0, 0, 0);
+
+                    }
+                    .edit{
+                        
+                        color: green;
+                        
+                    }
+                    .delete{
+                        
+                        color: red;
+                        
+                    }
+                    .restore{
+                        color:whitesmoke
+                    }
+                }
+              }
               #products td, #products th {
                 border: 1px solid #ddd;
                 padding: 8px;
+                &:last-of-type{
+                    text-align: center;
+                }
               }
               
-              #products tr:nth-child(even){background-color: #f2f2f2;color: black;}
+              #products tr:nth-child(even){background-color: #6e6e6e8c;color:white;}
               
               
               #products th {
@@ -107,5 +144,9 @@
                 padding: 10px;
             }
         }
+    }
+    .active{
+        background: black;
+        color: white;
     }
 }
