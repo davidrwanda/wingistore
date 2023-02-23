@@ -14,6 +14,9 @@ const Home = () => {
   useEffect(() => {
     const productData = controller.getProducts();
     setFilteredProducts(productData);
+    if (!localStorage.getItem("products")) {
+      localStorage.setItem("products", JSON.stringify([]));
+    }
   }, []);
 
   const handleSearch = () => {

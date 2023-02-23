@@ -29,7 +29,7 @@ const Categories = () => {
         </tr>
         <tr>
           <td>
-            Tech
+            Electronics
             <span>
               <DeleteIcon
                 className="delete"
@@ -42,7 +42,7 @@ const Categories = () => {
         </tr>
         <tr>
           <td>
-            Tech
+            Fashion
             <span>
               <DeleteIcon
                 className="delete"
@@ -55,7 +55,7 @@ const Categories = () => {
         </tr>
         <tr>
           <td>
-            Tech
+            Sports
             <span>
               <DeleteIcon
                 className="delete"
@@ -74,6 +74,15 @@ const Categories = () => {
             </span>
           </td>
         </tr>
+        <tr>
+          <td>
+            Fashion
+            <span>
+              <DeleteIcon className="delete btn" />
+            </span>
+          </td>
+        </tr>
+        Sports
       </table>
     </div>
   );

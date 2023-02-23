@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import ClearIcon from "@mui/icons-material/Clear";
 import { useDispatch, useSelector } from "react-redux";
-import { resetTab, selectTab } from "../../features/tabSlice";
+import { resetTab, selectTab, showIsSubmitted } from "../../features/tabSlice";
 import { ManageController } from "../../controllers/ManageController";
 
 const AddNewProduct = () => {
@@ -39,10 +39,12 @@ const AddNewProduct = () => {
       ? manageController.updateProduct(pid, newProduct)
       : manageController.postProduct(newProduct);
     resetForm();
+    dispatch(showIsSubmitted());
   };
 
   useEffect(() => {
     if (whichTab?.edit?.show) {
+      console.log(whichTab.edit.data.product);
       setPid(whichTab.edit.data.id);
       setPname(whichTab.edit.data.name);
       setPdesc(whichTab.edit.data.description);

@@ -1,6 +1,8 @@
 export class ProductModel {
   constructor() {
-    this.data = JSON.parse(localStorage.getItem("products"));
+    this.data = localStorage.getItem("products")
+      ? JSON.parse(localStorage.getItem("products"))
+      : [];
   }
 
   // Get all products

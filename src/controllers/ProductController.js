@@ -8,7 +8,9 @@ import { ProductBuilder } from "../helpers/ProductsBuilder";
 const ProductRepo = new ProductRepository();
 export class ProductController {
   constructor() {
-    this.products = localStorage.getItem("products");
+    this.products = localStorage.getItem("products")
+      ? localStorage.getItem("products")
+      : [];
   }
   getProducts() {
     return ProductRepo.getProducts().filter((product) => product.status === 1);

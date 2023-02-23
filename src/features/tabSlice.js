@@ -5,6 +5,7 @@ const initialState = {
     add: { show: false, data: null },
     edit: { show: false, data: null },
   },
+  isSubmitted: false,
 };
 
 export const tabSlice = createSlice({
@@ -24,6 +25,9 @@ export const tabSlice = createSlice({
         edit: { show: true, data: action.payload },
       };
     },
+    showIsSubmitted: (state, action) => {
+      state.isSubmitted = !state.isSubmitted;
+    },
     resetTab: (state) => {
       state.control = {
         add: { show: false, data: null },
@@ -33,7 +37,9 @@ export const tabSlice = createSlice({
   },
 });
 
-export const { showAdd, showEdit, resetTab } = tabSlice.actions;
+export const { showAdd, showEdit, resetTab, showIsSubmitted } =
+  tabSlice.actions;
 export const selectTab = (state) => state.tabcontrollerstore.control;
-
+export const selectIsSubmitted = (state) =>
+  state.tabcontrollerstore.isSubmitted;
 export default tabSlice.reducer;

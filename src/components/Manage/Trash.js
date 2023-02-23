@@ -4,18 +4,20 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import AddNewProduct from "./AddNewProduct";
 import { useDispatch } from "react-redux";
 import RestoreIcon from "@mui/icons-material/Restore";
+import SearchIcon from "@mui/icons-material/Search";
 import { ManageController } from "../../controllers/ManageController";
 import { exportCSV } from "../../helpers/exportCSV";
 
 const ManageCtrl = new ManageController();
 
 const Trash = () => {
-  const dispatch = useDispatch();
   const [isShow, setIsShow] = useState({ show: false, data: null });
   const [trashedProducts, setTrashedProducts] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const handleDelete = (id) => {
-    ManageCtrl.deleteProduct(id);
+  const handleSearch = () => {
+    const products = trashedProducts.filter((p) => p.name == searchQuery);
+    setTrashedProducts(products);
   };
 
   useEffect(() => {
@@ -25,8 +27,20 @@ const Trash = () => {
 
   return (
     <div className="manage_product_container">
-      <h1>Trash</h1>
-
+      <div className="store_products_filter">
+        <div>
+          <SearchIcon />
+          <input
+            type="text"
+            placeholder="Search by name"
+            value={searchQuery}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              handleSearch();
+            }}
+          />
+        </div>
+      </div>
       <div className="product_table">
         <table id="products">
           <tr>
