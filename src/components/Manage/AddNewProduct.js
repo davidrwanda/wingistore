@@ -15,6 +15,16 @@ const AddNewProduct = () => {
   const [pcategory, setPcategory] = useState("");
   const [pimage, setPimage] = useState("");
 
+  const handleImageChange = (e) => {
+    e.preventDefault();
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      const imageUrl = URL.createObjectURL(file);
+      setPimage(imageUrl);
+    };
+  };
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const newProduct = {
@@ -25,30 +35,10 @@ const AddNewProduct = () => {
       image: pimage,
       status: 1,
     };
-    // Create a new FileReader object
-    const reader = new FileReader();
-    // Set the onloadend function to execute when the reader has finished loading the file
-    reader.onloadend = () => {
-      // Set the image property of the newProduct object to the base64-encoded data URL of the image file
-      newProduct.image = reader.result;
-      // If the edit tab is active, update the product in the localStorage
-      // Otherwise, add the new product to the localStorage
-      whichTab.edit.show
-        ? manageController.updateProduct(pid, newProduct)
-        : manageController.postProduct(newProduct);
-      // Reset the form and dispatch the resetTab action
-      resetForm();
-    };
-    // If an image file has been selected, read it as a data URL using the FileReader object
-    if (pimage) {
-      reader.readAsDataURL(pimage);
-    } else {
-      // If no image file has been selected, add/update the product without an image
-      whichTab.edit.show
-        ? manageController.updateProduct(pid, newProduct)
-        : manageController.postProduct(newProduct);
-      resetForm();
-    }
+    whichTab.edit.show
+      ? manageController.updateProduct(pid, newProduct)
+      : manageController.postProduct(newProduct);
+    resetForm();
   };
 
   useEffect(() => {
@@ -118,11 +108,7 @@ const AddNewProduct = () => {
           <option value="sports">Sports</option>
         </select>
         <label>Image</label>
-        <input
-          type="file"
-          onChange={(e) => setPimage(e.target.value)}
-          placeholder=""
-        />
+        <input type="file" onChange={handleImageChange} placeholder="" />
         <button type="submit">Submit</button>
       </form>
     </div>
