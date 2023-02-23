@@ -21,6 +21,7 @@ const Home = () => {
           </div>
           <div className="store_product">
             <Product></Product>
+            {/* <Product></Product>
             <Product></Product>
             <Product></Product>
             <Product></Product>
@@ -28,8 +29,7 @@ const Home = () => {
             <Product></Product>
             <Product></Product>
             <Product></Product>
-            <Product></Product>
-            <Product></Product>
+            <Product></Product> */}
           </div>
         </div>
       </div>
