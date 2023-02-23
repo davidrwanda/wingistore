@@ -6,7 +6,7 @@ This proof of concept (POC) is a simple e-commerce application built using React
 The architecture of this POC can be broken down into three main components:
 
 ### React Components
-The front-end of this application is built using React. The components are organized into separate files based on their functionality. The components are responsible for rendering the user interface, handling user input, and communicating with the back-end API.
+The front-end of this application is built using React. The components are organized into separate files based on their functionality. The components are responsible for rendering the user interface, handling user input, and communicating with the controllers.
 
 ### Local Storage
 The application uses local storage to store the product data. When the application loads, it checks if there is any product data stored in local storage. If there is, it loads the data into the application. When the user adds, edits, or deletes a product, the changes are saved to local storage.
