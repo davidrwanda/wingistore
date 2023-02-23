@@ -30,7 +30,7 @@
         padding-top:0;
         .store_product{
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 10px;
         }
         .store_products_filter{

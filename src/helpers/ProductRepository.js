@@ -48,7 +48,6 @@ export class ProductRepository {
     return productModel.getAll();
   }
   getProductByProductId(productId) {
-    console.log(productId);
     return productModel.getById(productId);
   }
   addProduct(product) {

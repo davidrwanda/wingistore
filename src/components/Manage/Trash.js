@@ -14,9 +14,10 @@ const Trash = () => {
   const [isShow, setIsShow] = useState({ show: false, data: null });
   const [trashedProducts, setTrashedProducts] = useState([]);
 
-  const handleExportCSV = () => {
-    exportCSV(trashedProducts);
+  const handleDelete = (id) => {
+    ManageCtrl.deleteProduct(id);
   };
+
   useEffect(() => {
     const trashed = ManageCtrl.getTrashedProducts();
     setTrashedProducts(trashed);
@@ -64,11 +65,19 @@ const Trash = () => {
                     />
                     <DeleteIcon
                       className="delete btn"
-                      onClick={() =>
-                        window.confirm(
-                          "Are sure you want to Delete Permanently"
-                        )
-                      }
+                      onClick={() => {
+                        if (
+                          window.confirm(
+                            "Are you sure you want delete permanently"
+                          )
+                        ) {
+                          ManageCtrl.deleteProduct(product.id);
+                          const updatedTrashedProducts = trashedProducts.filter(
+                            (p) => p.id !== product.id
+                          );
+                          setTrashedProducts(updatedTrashedProducts);
+                        }
+                      }}
                     />
                   </div>
                 </td>

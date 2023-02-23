@@ -1,10 +1,15 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import ProductImg from "../assets/laptop.jpg";
 import "../styles/Details.scss";
+import { ProductController } from "../controllers/ProductController";
 
-const ProductDetails = ({ product }) => {
+const ProductDetails = () => {
+  const productController = new ProductController();
+  const { id } = useParams();
+  const product = productController.getProduct(id);
+  console.log(product);
   const navigate = useNavigate();
   return (
     <div className="product_detail_container">

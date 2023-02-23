@@ -9,8 +9,10 @@ export class ProductModel {
   }
 
   // Get a product by ID
-  getById(id) {
-    return this.data.find((product) => product.id === id);
+  getById(pid) {
+    // console.log(this.data);
+    const productData = this.data.find((product) => product.id == pid);
+    return productData;
   }
 
   // Add a new product
