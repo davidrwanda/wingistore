@@ -1,6 +1,11 @@
 # WINGI E-Commerce Proof of Concept
 
+
 This proof of concept (POC) is a simple e-commerce application built using React and local storage. The application allows users to view a list of products, add new products, edit existing products, and export the list of products to a CSV file.
+
+## Demo link
+For more information and examples of how to use the app, you can check out the following YouTube link.
+[Demo link](https://youtu.be/ob0U1QvyWWQ)
 
 ## Architecture Overview
 The architecture of this POC can be broken down into three main components:
@@ -105,9 +110,6 @@ Possible future work for this POC includes:
 2. Adding authentication and authorization to restrict access to certain features.
 3. Adding pagination or infinite scrolling to handle large lists of products.
 4. Adding filtering and sorting to make it easier to find specific products.
-## Demo link
-For more information and examples of how to use the app, you can check out the following YouTube link.
-[Demo link](https://youtu.be/ob0U1QvyWWQ)
 
 ## Learn More
 
