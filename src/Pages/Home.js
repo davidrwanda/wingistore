@@ -55,22 +55,9 @@ const Home = () => {
             </div>
           </div>
           <div className="store_product">
-<<<<<<< HEAD
             {filteredProducts.map((product) => (
               <Product key={product.id} product={product} />
             ))}
-=======
-            <Product></Product>
-            {/* <Product></Product>
-            <Product></Product>
-            <Product></Product>
-            <Product></Product>
-            <Product></Product>
-            <Product></Product>
-            <Product></Product>
-            <Product></Product>
-            <Product></Product> */}
->>>>>>> 6121a0f04022d1b2d9cb7d60479784771b20a77f
           </div>
         </div>
       </div>

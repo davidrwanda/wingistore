@@ -13,7 +13,13 @@ const Products = () => {
   const dispatch = useDispatch();
   const manageController = new ManageController();
   const productList = manageController.getProducts();
+  const [searchQuery, setSearchQuery] = useState("");
   const [products, setProducts] = useState([]);
+
+  const handleSearch = () => {
+    const products = manageController.filterByName(searchQuery);
+    setProducts(products);
+  };
 
   const handleDelete = (id) => {
     manageController.updateProductStatus(id, 0);
@@ -38,6 +44,15 @@ const Products = () => {
   return (
     <div className="manage_product_container">
       <h1>Products</h1>
+      <input
+        type="text"
+        placeholder="Search by name"
+        value={searchQuery}
+        onChange={(e) => {
+          setSearchQuery(e.target.value);
+          handleSearch();
+        }}
+      />
       <div className="add_action">
         <button onClick={() => dispatch(showAdd())}>Add</button>
         <button onClick={handleExportCSV}>Export</button>
