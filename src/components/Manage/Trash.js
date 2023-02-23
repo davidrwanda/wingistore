@@ -62,6 +62,14 @@ const Trash = () => {
                         }
                       }}
                     />
+                    <DeleteIcon
+                      className="delete btn"
+                      onClick={() =>
+                        window.confirm(
+                          "Are sure you want to Delete Permanently"
+                        )
+                      }
+                    />
                   </div>
                 </td>
               </tr>
